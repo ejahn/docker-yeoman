@@ -1,9 +1,9 @@
 # pull base image
-FROM ubuntu:latest
+FROM ubuntu:14.04
 MAINTAINER Erik Jahn <mail@erikjahn.de>
 
 # Install updates, get packages
-RUN sudo apt-get update
+RUN sudo apt-get update -y -qq
 RUN sudo apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
