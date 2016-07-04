@@ -7,6 +7,7 @@ RUN sudo apt-get update -y -qq
 RUN sudo apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
+RUN sudo npm install -g npm
 
 # Install ruby, yeoman, etc.
 RUN sudo apt-get install -y python git git-core
