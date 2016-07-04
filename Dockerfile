@@ -19,7 +19,7 @@ RUN apt-get install make
 # install compass
 RUN gem install --no-rdoc --no-ri compass
 
-RUN sudo npm install -g grunt-cli bower gulp yo generator-angular generator-gulp-angular generator-webapp generator-fountain-webapp
+RUN sudo npm install -g grunt-cli bower gulpjs/gulp-cli yo generator-angular generator-gulp-angular generator-webapp generator-fountain-webapp
 
 # Add a yeoman user because grunt doesn't like being root
 RUN adduser --disabled-password --gecos "" yeoman; \
