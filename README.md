@@ -1,5 +1,5 @@
 # docker-yeoman
-Ubuntu 14.04 image with a selection of yeoman generators, node.js and NVM, Grunt, Gulp, &amp; Compass
+Ubuntu 14.04 image with node.js (nvm), Grunt, Gulp, &amp; Compass and a selection of yeoman generators
 
 ## Description
 
@@ -11,7 +11,7 @@ Ubuntu 14.04 image with a selection of yeoman generators, node.js and NVM, Grunt
 
 **Includes:**
 
-* Node.js
+* Node.js (nvm)
 * Compass/Sass
 * Ruby
 * Gulp
