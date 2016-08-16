@@ -7,7 +7,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Install updates, get packages
 RUN apt-get update --fix-missing -y -qq
-RUN sudo apt-get install -y build-essential libssl-dev curl wget
+RUN sudo apt-get install -y build-essential libssl-dev curl wget software-properties-common
 
 # Install ruby, python, etc.
 RUN sudo apt-get install -y python git git-core
@@ -35,8 +35,9 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 RUN sudo npm install -g npm
 
 # install ruby
-RUN apt-get install -y -qq ruby-dev
-RUN apt-get install make
+RUN sudo apt-add-repository ppa:brightbox/ruby-ng
+RUN sudo apt-get update
+RUN sudo apt-get install -y ruby2.3 ruby2.3-dev
 
 # install compass
 RUN gem install --no-rdoc --no-ri compass
