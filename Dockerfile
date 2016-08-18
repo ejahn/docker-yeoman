@@ -47,8 +47,15 @@ RUN adduser --disabled-password --gecos "" yeoman; \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER yeoman
 
+# install oh-my-zsh
+RUN sudo apt-get install -y zsh
+RUN sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUN sudo cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
 # Create a directory for the app
 RUN sudo mkdir -p /app && cd $_
 WORKDIR /app
 
 EXPOSE 9000
+
+CMD ["zsh"]
