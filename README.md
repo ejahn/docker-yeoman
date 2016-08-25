@@ -5,7 +5,6 @@ Ubuntu 14.04 image with node.js (nvm), Grunt, Gulp, &amp; Compass and a selectio
 
 **This image currently contains the following Yeoman packages:**
 * [fountain.js](https://github.com/FountainJS/generator-fountain-webapp)
-* [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular)
 * [generator-angular](https://github.com/yeoman/generator-angular)
 * [generator-webapp](https://github.com/yeoman/generator-webapp)
 
