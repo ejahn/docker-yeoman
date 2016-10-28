@@ -12,7 +12,7 @@ RUN sudo apt-get install -y build-essential libssl-dev curl wget software-proper
 # Install ruby, python, etc.
 RUN sudo apt-get install -y python git git-core
 
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 # Install yeoman, generators and dependencies
@@ -20,7 +20,7 @@ RUN sudo npm install -g grunt-cli bower gulpjs/gulp-cli yo typings generator-kar
 
 # Install nvm
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4
+ENV NODE_VERSION 6
 
 RUN wget -qO- https://raw.githubusercontent.com/xtuple/nvm/master/install.sh | sudo bash \
     && source $NVM_DIR/nvm.sh \
@@ -32,7 +32,7 @@ ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # Make sure to use the latest version of npm
-RUN sudo npm install -g npm
+# RUN sudo npm install -g npm
 
 # install ruby
 RUN sudo apt-add-repository ppa:brightbox/ruby-ng
