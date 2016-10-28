@@ -1,5 +1,5 @@
 # pull base image
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Erik Jahn <mail@erikjahn.de>
 
 # Replace shell with bash so we can source files
@@ -7,6 +7,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Install updates, get packages
 RUN apt-get update --fix-missing -y -qq
+RUN apt-get install sudo
 RUN sudo apt-get install -y build-essential libssl-dev curl wget software-properties-common
 
 # Install ruby, python, etc.
@@ -30,9 +31,6 @@ RUN wget -qO- https://raw.githubusercontent.com/xtuple/nvm/master/install.sh | s
 
 ENV NODE_PATH $NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
-# Make sure to use the latest version of npm
-# RUN sudo npm install -g npm
 
 # install ruby
 RUN sudo apt-add-repository ppa:brightbox/ruby-ng
