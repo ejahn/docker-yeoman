@@ -17,7 +17,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 # Install yeoman, generators and dependencies
-RUN sudo npm install -g grunt-cli bower gulpjs/gulp-cli yo typings generator-karma generator-angular generator-webapp generator-fountain-webapp
+RUN sudo npm install -g grunt-cli bower gulpjs/gulp-cli yo typings generator-karma generator-angular generator-webapp generator-fountain-webapp foundation-cli
 
 # Install nvm
 ENV NVM_DIR /usr/local/nvm
