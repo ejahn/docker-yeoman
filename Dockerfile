@@ -1,6 +1,6 @@
 # pull base image
 FROM ubuntu:16.04
-MAINTAINER Erik Jahn <mail@erikjahn.de>
+MAINTAINER Erik Jahn <erik@cmft.io>
 
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
